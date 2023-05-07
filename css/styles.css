@@ -60,6 +60,7 @@ img {
     align-items: center;
 }
 .header-nav-link {
+    position: relative;
     display: block;
     font-weight: 500;
     color: var(--logo-second-cl);
@@ -115,6 +116,7 @@ img {
     color: var(--accent-txt-cl);
 }
 .header-nav-link::after {
+    position: absolute;
     content:"" ;
     position: relative;
     bottom: 0;
@@ -443,25 +445,26 @@ img {
     width: 100%;
     height: 100%;
     background: rgba(46, 47, 66, 0.4);
-    transition: opacity var(--anim), visibility var(--anim);
+
 }
 .backdrop.is-hidden {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
     transition-delay: 300ms;
 }
 .modal {
     position: absolute;
     top: calc(50%);
     left: calc(50%);
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%) scale(1);
     width: 408px;
     min-height: 576px;
     background-color: #FCFCFC;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-    transition: opacity var(--anim), transform var(--anim);
+    transition: transform var(--anim);
     transition-delay: 300ms;
 }
 .backdrop.is-hidden .modal {
@@ -483,18 +486,15 @@ img {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     cursor: pointer;
-    transition: background-color var(--anim) border var(--anim);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-close-btn:hover,
 .modal-close-btn:focus {
     background-color: var(--accent-txt-cl);
     border: none;
+    fill: #fff;
 }
 .modal-close-icon {
     fill: var(--logo-second-cl);
     transition: fill var(--anim);
-}
-.modal-close-icon:hover,
-.modal-close-icon:focus {
-    fill: #fff;
 }
