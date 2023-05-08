@@ -405,7 +405,6 @@ img {
 .exampl-link:hover .exampl-text,
 .exampl-link:focus .exampl-text {
     transform: translateY(0%);
-    background-color: var(--logo-first-cl);
 }
 .exampl-text {
     position: absolute;
@@ -423,6 +422,7 @@ img {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--btn-bgd);
+    background-color: var(--logo-first-cl);
 }
 .prtf-card {
     border: 1px solid #e7e9fc;
